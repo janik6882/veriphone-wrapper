@@ -1,5 +1,4 @@
 import requests
-import json
 __docu__ = "https://veriphone.io/docs/v2"
 
 class Wrapper:
@@ -21,6 +20,7 @@ class Wrapper:
 
 
 if __name__ == '__main__':
+    import json
     with open("creds.json", "r") as f:
         creds = json.load(f)
     test = Wrapper(creds["API-Key"])
