@@ -1,4 +1,4 @@
-###veriphone wrapper for python
+# veriphone wrapper for python
 
 Simple API Wrapper for the Veriphone Basic API.
 
