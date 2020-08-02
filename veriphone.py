@@ -1,8 +1,20 @@
 import requests
 __docu__ = "https://veriphone.io/docs/v2"
 
-class Wrapper:
+class Veriphone:
+    """
+    Comment: A Classs for checking a phone number
+    Input: API-Key for the api. get it at https://veriphone.io/
+    Output: Nothing
+    Special: Nothing Special
+    """
     def __init__(self, API_Key):
+        """
+        Comment: Init method for the Veriphone Class
+        Input: API Key, get it at https://veriphone.io/
+        Output: Nothing
+        Special: Nothing special
+        """
         self.api_key = API_Key
         self.base_url = "https://api.veriphone.io/v2/"
 
@@ -23,6 +35,6 @@ if __name__ == '__main__':
     import json
     with open("creds.json", "r") as f:
         creds = json.load(f)
-    test = Wrapper(creds["API-Key"])
+    test = Veriphone(creds["API-Key"])
     inp = raw_input("Please enter a Phone number you want verified: ")
     test.Verify_key(inp)
