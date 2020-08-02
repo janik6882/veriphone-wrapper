@@ -1,6 +1,7 @@
 import requests
 __docu__ = "https://veriphone.io/docs/v2"
 
+
 class Veriphone:
     """
     Comment: A Classs for checking a phone number
@@ -8,6 +9,7 @@ class Veriphone:
     Output: Nothing
     Special: Nothing Special
     """
+
     def __init__(self, API_Key):
         """
         Comment: Init method for the Veriphone Class
@@ -26,14 +28,14 @@ class Veriphone:
         Special: nothing special
         """
         url = self.base_url + "verify"
-        params = {"key" : self.api_key, "phone": phone_number}
+        params = {"key": self.api_key, "phone": phone_number}
         r = requests.get(url, params=params)
         return r.content
 
 
 if __name__ == '__main__':
-    #Simple If Main for example, will require a creds.json which contains the API Key in a Dict with Key API-Key
-    import json#
+    # Simple If Main for example, will require a creds.json which contains the API Key in a Dict with Key API-Key
+    import json
     with open("creds.json", "r") as f:
         creds = json.load(f)
     test = Veriphone(creds["API-Key"])
